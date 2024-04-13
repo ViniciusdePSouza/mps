@@ -1,9 +1,6 @@
 import {
-  LocationAccuracy,
-  LocationObject,
   getCurrentPositionAsync,
   requestForegroundPermissionsAsync,
-  watchPositionAsync,
 } from "expo-location";
 
 export async function requestLocationPermition() {
