@@ -60,7 +60,8 @@ export function Home() {
           </TouchableOpacity>
         </View>
         <Text style={{ marginTop: 20 }}>{t("traslationText")}</Text>
-        <Map />
+
+        {location && <Map location={location} />}
       </View>
     </SafeAreaView>
   );
