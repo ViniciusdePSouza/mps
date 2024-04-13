@@ -17,14 +17,3 @@ export async function getCurrentPosition() {
 
   return currentPosition;
 }
-
-export async function watchPosition() {
-  watchPositionAsync(
-    {
-      accuracy: LocationAccuracy.Highest,
-      timeInterval: 1000,
-      distanceInterval: 1,
-    },
-    (response) => response
-  );
-}

@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import {
   getCurrentPosition,
   requestLocationPermition,
-  watchPosition,
 } from "../../utils/location";
 import {
   LocationAccuracy,
@@ -52,8 +51,7 @@ export function Home() {
         distanceInterval: 1,
       },
       (response) => {
-        console.log(response);
-        setLocation(response)
+        setLocation(response);
       }
     );
   }, []);
