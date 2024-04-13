@@ -9,8 +9,13 @@ import { useEffect, useState } from "react";
 import {
   getCurrentPosition,
   requestLocationPermition,
+  watchPosition,
 } from "../../utils/location";
-import { LocationObject } from "expo-location";
+import {
+  LocationAccuracy,
+  LocationObject,
+  watchPositionAsync,
+} from "expo-location";
 
 export function Home() {
   const [granted, setGranted] = useState(false);
@@ -23,7 +28,6 @@ export function Home() {
 
   async function defineLocation() {
     const currentPosition = await getCurrentPosition();
-    console.log("LOCATION ==>", currentPosition);
     setLocation(currentPosition);
   }
 
@@ -39,6 +43,20 @@ export function Home() {
       defineLocation();
     }
   }, [granted]);
+
+  useEffect(() => {
+    watchPositionAsync(
+      {
+        accuracy: LocationAccuracy.Highest,
+        timeInterval: 1000,
+        distanceInterval: 1,
+      },
+      (response) => {
+        console.log(response);
+        setLocation(response)
+      }
+    );
+  }, []);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
