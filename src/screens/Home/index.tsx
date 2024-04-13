@@ -15,6 +15,7 @@ import {
   LocationObject,
   watchPositionAsync,
 } from "expo-location";
+import { Button } from "../../components/Button";
 
 export function Home() {
   const [granted, setGranted] = useState(false);
@@ -68,14 +69,18 @@ export function Home() {
             flexDirection: "row",
           }}
         >
-          <TouchableOpacity onPress={() => changeLanguage("en")}>
-            <Text>English</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text onPress={() => changeLanguage("pt")}>Português</Text>
-          </TouchableOpacity>
+          <Button
+            title={"English"}
+            onPressFunction={changeLanguage}
+            language={"en"}
+          />
+          <Button
+            title={"Português"}
+            onPressFunction={changeLanguage}
+            language={"pt"}
+          />
         </View>
-        <Text style={{ marginTop: 20 }}>{t("traslationText")}</Text>
+        <Text style={styles.title}>{t("titleText")}</Text>
 
         {location && <Map location={location} />}
       </View>
