@@ -20,7 +20,7 @@ export function Map({ location }: MapProps) {
     } else if (heading > 80 && heading < 100) {
       return "top";
     } else if (heading > 100 && heading < 170) {
-      return "topLeft";
+      return "rightDown";
     } else if (heading > 170 && heading < 190) {
       return "left";
     } else if (heading > 190 && heading < 260) {
@@ -28,7 +28,7 @@ export function Map({ location }: MapProps) {
     } else if (heading > 260 && heading < 280) {
       return "down";
     } else if (heading > 280 && heading < 350) {
-      return "rightDown";
+      return "topLeft";
     } else if (heading > 350 && heading < 0) {
       return "right";
     }
@@ -41,8 +41,8 @@ export function Map({ location }: MapProps) {
   useEffect(() => {
     mapRef.current?.animateCamera({
       center: location.coords,
-      pitch: 50,
-      zoom: 19,
+      pitch: 20,
+      zoom:17
     });
   }, [location]);
 
