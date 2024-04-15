@@ -43,8 +43,8 @@ export function Map({ location }: MapProps) {
   useEffect(() => {
     mapRef.current?.animateCamera({
       center: location.coords,
-      pitch: 20,
       zoom: 17,
+      pitch: 10
     });
   }, [location]);
 
@@ -66,7 +66,7 @@ export function Map({ location }: MapProps) {
             longitude: location.coords.longitude,
           },
           heading: 0,
-          pitch: 20,
+          pitch: 10,
           zoom: 17,
         }}
       >
