@@ -1,14 +1,11 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
 import MapView from "react-native-maps";
-import { LocationObject } from "expo-location";
 import { useEffect, useRef } from "react";
 import { CarMarker } from "../CarMarker";
 import { useTranslation } from "react-i18next";
+import { MapProps } from "../../@types";
 
-interface MapProps {
-  location: LocationObject;
-}
 
 export function Map({ location }: MapProps) {
   const mapRef = useRef<MapView>(null);

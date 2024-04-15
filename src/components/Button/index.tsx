@@ -1,12 +1,6 @@
 import { TouchableOpacity, Text } from "react-native";
 import { styles } from "./styles";
-
-interface ButtonProps {
-  title: string;
-  onPressFunction: (language: string) => void;
-  language: string;
-  isActive?: boolean;
-}
+import { ButtonProps } from "../../@types";
 
 export function Button({ title, onPressFunction, language }: ButtonProps) {
   return (

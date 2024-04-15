@@ -1,22 +1,7 @@
 import { Marker } from "react-native-maps";
 
 import { Image } from "react-native";
-import { LocationObject } from "expo-location";
-
-type DirectionsType =
-  | "top"
-  | "topRight"
-  | "right"
-  | "rightDown"
-  | "down"
-  | "downLeft"
-  | "left"
-  | "topLeft";
-
-interface CarMarkerProps {
-  location: LocationObject;
-  pngCarDirection: DirectionsType;
-}
+import { CarMarkerProps } from "../../@types";
 
 const carIcons = {
     top: require('../../assets/top.png'),
