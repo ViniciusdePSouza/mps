@@ -1,4 +1,10 @@
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Keyboard,
+  SafeAreaView,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import { styles } from "../styles";
 
 import "../../utils/languages/i18n";
@@ -15,6 +21,7 @@ import {
   LocationObject,
   watchPositionAsync,
 } from "expo-location";
+
 import { Button } from "../../components/Button";
 
 export function Home() {
@@ -58,32 +65,34 @@ export function Home() {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <View
-          style={{
-            width: "100%",
-            alignContent: "center",
-            gap: 10,
-            justifyContent: "center",
-            flexDirection: "row",
-          }}
-        >
-          <Button
-            title={"English"}
-            onPressFunction={changeLanguage}
-            language={"en"}
-          />
-          <Button
-            title={"Português"}
-            onPressFunction={changeLanguage}
-            language={"pt"}
-          />
-        </View>
-        <Text style={styles.title}>{t("titleText")}</Text>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <View
+            style={{
+              width: "100%",
+              alignContent: "center",
+              gap: 10,
+              justifyContent: "center",
+              flexDirection: "row",
+            }}
+          >
+            <Button
+              title={"English"}
+              onPressFunction={changeLanguage}
+              language={"en"}
+            />
+            <Button
+              title={"Português"}
+              onPressFunction={changeLanguage}
+              language={"pt"}
+            />
+          </View>
+          <Text style={styles.title}>{t("titleText")}</Text>
 
-        {location && <Map location={location} />}
-      </View>
-    </SafeAreaView>
+          {location && <Map location={location} />}
+        </View>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 }

@@ -4,7 +4,7 @@ import { DirectionsType } from "./DirectionsType";
 export interface ButtonProps {
   title: string;
   onPressFunction: (language: string) => void;
-  language: string;
+  language?: string;
   isActive?: boolean;
 }
 

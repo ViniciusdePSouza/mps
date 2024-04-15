@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     width: "100%",
-    minHeight: 600,
+    minHeight: 700,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 12,
@@ -15,9 +15,14 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
   },
 
+  banner: {
+    marginTop: 12
+  },
+
   title: {
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    marginBottom: 12
   },
 
   instructions: {

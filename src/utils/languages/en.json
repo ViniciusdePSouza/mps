@@ -3,6 +3,8 @@
     "traslationText": "Exemple  text translation",
     "titleText": "3D Animation Map",
     "titleInstructions": "Instructions:",
-    "bannerInstructions": "The map works as follows: whenever you move your device, the app will read your real-time location, and the map will move accordingly to your location. According to your orientation, the car will also change direction!"
+    "bannerInstructions": "The map works as follows: whenever you move your device, the app will read your real-time location, and the map will move accordingly to your location. According to your orientation, the car will also change direction!",
+    "inputPlaceholder": "Where should we go?",
+    "clearDestination": "Clear destination"
   }
 }
