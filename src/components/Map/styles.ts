@@ -1,10 +1,8 @@
 import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
-    width: "80%",
-    height: "50%",
-    borderColor: "black",
-    borderRadius: 8,
+    width: "100%",
+    minHeight: 600,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 12,
@@ -14,11 +12,17 @@ export const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     borderRadius: 8,
-    marginBottom: 12
+    marginBottom: 12,
   },
 
   title: {
-    width:'20%',
-    backgroundColor: 'red'
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+
+  instructions: {
+    fontSize: 16,
+    fontWeight: "normal",
+    color: '#b7bbc0'
   }
 });

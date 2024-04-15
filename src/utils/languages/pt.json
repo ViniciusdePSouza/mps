@@ -1,6 +1,8 @@
 {
-    "translation": {
-        "traslationText": "texto de tradução exemplo",
-        "titleText": "Mapa de animação 3D"
-    }
+  "translation": {
+    "traslationText": "texto de tradução exemplo",
+    "titleText": "Mapa de animação 3D",
+    "titleInstructions": "Instruções: ",
+    "bannerInstructions": "O mapa funciona da seguinte maneira, sempre que voce mexer o seu ispositivo o app irá ler sua localização em tempo real e o mapa irá se movimentar conforme a sua localização. De acordo com a sua orientação o carrinho também mudará de direção !"
+  }
 }

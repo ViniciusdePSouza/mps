@@ -4,6 +4,7 @@ import MapView from "react-native-maps";
 import { LocationObject } from "expo-location";
 import { useEffect, useRef } from "react";
 import { CarMarker } from "../CarMarker";
+import { useTranslation } from "react-i18next";
 
 interface MapProps {
   location: LocationObject;
@@ -11,6 +12,7 @@ interface MapProps {
 
 export function Map({ location }: MapProps) {
   const mapRef = useRef<MapView>(null);
+  const { t } = useTranslation();
 
   function determinateCarDirection(heading: number | null) {
     if (heading == null) return "top";
@@ -52,7 +54,6 @@ export function Map({ location }: MapProps) {
         ref={mapRef}
         provider="google"
         style={styles.map}
-        
         initialRegion={{
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
@@ -73,13 +74,8 @@ export function Map({ location }: MapProps) {
       </MapView>
 
       <View>
-        <Text style={styles.title}>Instruções:</Text>
-        <Text>
-          O mapa funciona da seguinte maneira, sempre que voce mexer o seu
-          dispositivo o app irá ler sua localização em tempo real e o mapa irá
-          se movimentar conforme a sua localização. De acordo com a sua
-          orientação o carrinho também mudará de direção !
-        </Text>
+        <Text style={styles.title}>{t("titleInstructions")}</Text>
+        <Text style={styles.instructions}>{t("bannerInstructions")}</Text>
       </View>
     </View>
   );
