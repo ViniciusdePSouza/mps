@@ -38,7 +38,6 @@ export function CarMarker({ location, pngCarDirection }: CarMarkerProps) {
       }}
     >
       <Image
-      
          source={carIcons[pngCarDirection]}
         style={{ width: 35, height: 35, marginTop: 4, marginLeft: 4 }}
       />

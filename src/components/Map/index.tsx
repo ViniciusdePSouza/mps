@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { styles } from "./styles";
 import MapView from "react-native-maps";
 import { LocationObject } from "expo-location";
@@ -42,7 +42,7 @@ export function Map({ location }: MapProps) {
     mapRef.current?.animateCamera({
       center: location.coords,
       pitch: 20,
-      zoom:17
+      zoom: 17,
     });
   }, [location]);
 
@@ -52,15 +52,35 @@ export function Map({ location }: MapProps) {
         ref={mapRef}
         provider="google"
         style={styles.map}
+        
         initialRegion={{
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,
         }}
+        camera={{
+          center: {
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude,
+          },
+          heading: 0,
+          pitch: 20,
+          zoom: 17,
+        }}
       >
         <CarMarker location={location} pngCarDirection={pngCarDirection} />
       </MapView>
+
+      <View>
+        <Text style={styles.title}>Instruções:</Text>
+        <Text>
+          O mapa funciona da seguinte maneira, sempre que voce mexer o seu
+          dispositivo o app irá ler sua localização em tempo real e o mapa irá
+          se movimentar conforme a sua localização. De acordo com a sua
+          orientação o carrinho também mudará de direção !
+        </Text>
+      </View>
     </View>
   );
 }
