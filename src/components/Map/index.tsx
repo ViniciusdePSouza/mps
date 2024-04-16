@@ -63,7 +63,12 @@ export function Map({ location }: MapProps) {
 
   return (
     <View style={styles.container}>
-      <View style={{ height: 100, width: "100%" }}>
+      <View
+        style={{
+          height: 100,
+          width: "100%",
+        }}
+      >
         <GooglePlacesAutocomplete
           placeholder={t("inputPlaceholder")}
           onPress={(data, details) => {
@@ -124,19 +129,22 @@ export function Map({ location }: MapProps) {
                   top: 50,
                   bottom: 50,
                   left: 50,
-                  right: 50
-                }
-              })
+                  right: 50,
+                },
+              });
             }}
           />
         )}
         <CarMarker location={location} pngCarDirection={pngCarDirection} />
       </MapView>
       {destination && (
-        <Button title={t("clearDestination")} onPressFunction={clearDestination} />
+        <Button
+          title={t("clearDestination")}
+          onPressFunction={clearDestination}
+        />
       )}
 
-      <View style={{marginTop: 12}}>
+      <View style={{ marginTop: 12 , width: '100%'}}>
         <Text style={styles.title}>{t("titleInstructions")}</Text>
         <Text style={styles.instructions}>{t("bannerInstructions")}</Text>
       </View>
